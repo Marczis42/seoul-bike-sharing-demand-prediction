@@ -1,13 +1,13 @@
 # Seoul Bike Sharing Demand Prediction
 
-An end-to-end Machine Learning and Time Series project in R to forecast hourly bike-sharing demand in urban environments, comparing traditional statistical forecasting methods with supervised machine learning algorithms.
+A Machine Learning and Time Series project in R to forecast hourly bike-sharing demand in urban environment, comparing traditional statistical forecasting methods with supervised machine learning algorithm.
 
 ---
 
 ## Project Overview
-Bike-sharing systems provide a sustainable and flexible transportation mode in modern cities. Accurately forecasting demand is critical for fleet rebalancing, operational efficiency, and maintenance planning.
+Bike-sharing systems provide a sustainable and flexible transportation mode in modern cities. Accurately forecasting demand is important for fleet rebalancing, operational efficiency, and maintenance planning.
 
-The goal of this project is to model and predict the target variable **`Rented Bike Count`** (hourly rentals) using weather conditions, seasonal patterns, and calendar features, benchmarked across econometric time-series models and tree-based ensemble methods.
+The goal of this project is to model and predict the target variable **`Rented Bike Count`** (hourly rentals) using weather conditions, seasonal patterns, and calendar features.
 
 * **Dataset Source:** [UCI Machine Learning Repository - Seoul Bike Sharing Demand](https://archive.ics.uci.edu/dataset/560/seoul+bike+sharing+demand)
 
@@ -21,7 +21,7 @@ The goal of this project is to model and predict the target variable **`Rented B
 
 ---
 
-## 🔍 Data Preprocessing & Pipeline
+## Data Preprocessing
 1. **Operating Days Filtering:** Removed 12 full non-functioning days and 1 partially affected day where rental counts were structurally zero due to system shutdowns, avoiding artificial bias in demand estimation.
 2. **Missing Value & Quality Checks:** Confirmed no missing values or data type parsing errors across all meteorological columns.
 3. **Exploratory Data Analysis (EDA):** Evaluated rental distribution (spread, variance, outliers) using jitter plots and density curves.
@@ -31,7 +31,8 @@ The goal of this project is to model and predict the target variable **`Rented B
 
 ## Models Compared
 * **Statistical Time Series:**
-  * ARIMA (Univariate baseline capturing autocorrelation and seasonality)
+  * ARIMA
+  * SARIMA
   * Vector Autoregression (VAR)
 * **Machine Learning:**
   * Random Forest Regressor (Non-linear interactions, weather sensitivities)
@@ -47,12 +48,3 @@ The goal of this project is to model and predict the target variable **`Rented B
 | **Random Forest** | *182.4* | *104.8* | *0.89* |
 
 > **Key Takeaway:** Random Forest significantly outperformed classical linear time series models by capturing complex non-linear interactions between peak commute hours and meteorological thresholds (e.g., rainfall, freezing temperatures).
-
----
-
-## How to Run Locally
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/Marczis42/seoul-bike-sharing-demand-prediction.git](https://github.com/Marczis42/seoul-bike-sharing-demand-prediction.git)
-   cd seoul-bike-sharing-demand-prediction
